@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Loading Survey</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,12 +28,12 @@
   </style>
 </head>
 <body>
-  <h2 id="status"></h2>
+  <h2>Loading your survey...</h2>
   <div class="spinner"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Survey pages (excluding fail)
+      // All your survey pages
       const surveys = [
         "tp-1000a0aa0jdjja0a9a.html",
         "tp-24876458SAD.html",
@@ -44,20 +44,9 @@
         "tp-q322415365673.html"
       ];
 
-      // Luck check: 70% chance success, 30% chance fail
-      const luck = Math.random(); // 0–1
-      let selectedSurvey;
-
-      if (luck < 0.7) {
-        // Lucky → pick random survey
-        const randomIndex = Math.floor(Math.random() * surveys.length);
-        selectedSurvey = surveys[randomIndex];
-        document.getElementById("status").textContent = "You’re lucky! Redirecting to survey...";
-      } else {
-        // Unlucky → fail page
-        selectedSurvey = "fail.html";
-        document.getElementById("status").textContent = "Bad luck! Redirecting...";
-      }
+      // Pick one randomly
+      const randomIndex = Math.floor(Math.random() * surveys.length);
+      const selectedSurvey = surveys[randomIndex];
 
       // Delay 2 seconds before redirect
       setTimeout(() => {
