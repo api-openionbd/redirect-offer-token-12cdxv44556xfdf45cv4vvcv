@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Loading Survey</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -28,31 +28,29 @@
   </style>
 </head>
 <body>
-  <h2></h2>
+  <h2>Loading your survey...</h2>
   <div class="spinner"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // All your survey pages
       const surveys = [
         "tp-1000a0aa0jdjja0a9a.html",
         "tp-24876458SAD.html",
         "tp-27468sdifie.html",
-        "tp-27468sdified.html",   // newly added
+        "tp-27468sdified.html",
         "tp-34976276975697ash.html",
         "tp-4u920878745dfkgdk.html",
-        "tp-q322415365673.html"
+        "tp-q322415365673.html",
         "fail.html"
       ];
 
-      // Randomly pick one
       const randomIndex = Math.floor(Math.random() * surveys.length);
       const selectedSurvey = surveys[randomIndex];
 
       // Simulate loading delay (2 seconds)
       setTimeout(() => {
         window.location.href = selectedSurvey;
-      }, 20);
+      }, 2000);
     });
   </script>
 </body>
