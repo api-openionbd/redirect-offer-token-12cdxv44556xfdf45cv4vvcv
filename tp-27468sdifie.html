@@ -1,0 +1,17 @@
+<script>
+  // Example function to check if user is duplicate
+  function isDuplicateUser() {
+    // Replace this with your actual duplicate-checking logic
+    // For example, checking cookies, localStorage, or server response
+    return localStorage.getItem("alreadyVisited") === "true";
+  }
+
+  // Run redirect logic
+  if (isDuplicateUser()) {
+    window.location.href = "fail.html";
+  } else {
+    // Mark user as visited
+    localStorage.setItem("alreadyVisited", "true");
+    window.location.href = "https://www.allcounted.com/s?did=kxn5hpi044bxn&lang=en_US";
+  }
+</script>
