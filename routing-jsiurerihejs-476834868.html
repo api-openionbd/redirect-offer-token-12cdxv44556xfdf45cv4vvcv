@@ -28,11 +28,12 @@
   </style>
 </head>
 <body>
-  <h2></h2>
+  <h2 id="status"></h2>
   <div class="spinner"></div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Survey pages (excluding fail)
       const surveys = [
         "tp-1000a0aa0jdjja0a9a.html",
         "tp-24876458SAD.html",
@@ -40,14 +41,25 @@
         "tp-27468sdified.html",
         "tp-34976276975697ash.html",
         "tp-4u920878745dfkgdk.html",
-        "tp-q322415365673.html",
-      
+        "tp-q322415365673.html"
       ];
 
-      const randomIndex = Math.floor(Math.random() * surveys.length);
-      const selectedSurvey = surveys[randomIndex];
+      // Luck check: 70% chance success, 30% chance fail
+      const luck = Math.random(); // 0–1
+      let selectedSurvey;
 
-      // Simulate loading delay (2 seconds)
+      if (luck < 0.7) {
+        // Lucky → pick random survey
+        const randomIndex = Math.floor(Math.random() * surveys.length);
+        selectedSurvey = surveys[randomIndex];
+        document.getElementById("status").textContent = "You’re lucky! Redirecting to survey...";
+      } else {
+        // Unlucky → fail page
+        selectedSurvey = "fail.html";
+        document.getElementById("status").textContent = "Bad luck! Redirecting...";
+      }
+
+      // Delay 2 seconds before redirect
       setTimeout(() => {
         window.location.href = selectedSurvey;
       }, 2000);
