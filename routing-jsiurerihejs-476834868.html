@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      color: #333;
+    }
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #4CAF50;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 30px auto;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h2>Please wait, finding your survey...</h2>
+  <div class="spinner"></div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // All your survey pages
+      const surveys = [
+        "tp-1000a0aa0jdjja0a9a.html",
+        "tp-24876458SAD.html",
+        "tp-27468sdifie.html",
+        "tp-27468sdified.html",   // newly added
+        "tp-34976276975697ash.html",
+        "tp-4u920878745dfkgdk.html",
+        "tp-q322415365673.html"
+        "fail.html"
+      ];
+
+      // Randomly pick one
+      const randomIndex = Math.floor(Math.random() * surveys.length);
+      const selectedSurvey = surveys[randomIndex];
+
+      // Simulate loading delay (2 seconds)
+      setTimeout(() => {
+        window.location.href = selectedSurvey;
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
